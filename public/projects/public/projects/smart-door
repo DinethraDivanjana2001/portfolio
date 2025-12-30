@@ -1,0 +1,66 @@
+# Smart Door Project
+
+This project aims to create a smart door system that can be controlled remotely and provides enhanced security features.
+
+## Project Structure
+
+- **/public/projects/smart-door**
+  - `README.md`
+  - `src/`
+    - `main.py`
+    - `door_control.py`
+    - `sensor.py`
+  - `config/`
+    - `settings.json`
+  - `tests/`
+    - `test_door_control.py`
+    - `test_sensor.py`
+
+## File Contents
+
+### README.md
+# Smart Door Project
+
+This project implements a smart door system that allows for remote access and monitoring. It includes features such as door locking/unlocking, motion detection, and notifications.
+
+### src/main.py
+import door_control
+
+if __name__ == "__main__":
+    door_control.run()
+
+### src/door_control.py
+def run():
+    print("Smart Door System is running...")
+
+def lock_door():
+    print("Door locked.")
+
+def unlock_door():
+    print("Door unlocked.")
+
+### src/sensor.py
+def detect_motion():
+    print("Motion detected!")
+
+### config/settings.json
+{
+    "door": {
+        "locked": false,
+        "notification": true
+    },
+    "sensor": {
+        "sensitivity": "high"
+    }
+}
+
+### tests/test_door_control.py
+def test_lock_door():
+    assert lock_door() == "Door locked."
+
+def test_unlock_door():
+    assert unlock_door() == "Door unlocked."
+
+### tests/test_sensor.py
+def test_detect_motion():
+    assert detect_motion() == "Motion detected!"
