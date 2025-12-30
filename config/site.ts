@@ -1,21 +1,19 @@
 export const siteConfig = {
   name: "Dinethra Rajapaksha | Developer Portfolio",
   authorName: "Dinethra Rajapaksha",
-  username: "namanbarkiya",
+  username: "DinethraDivanjana2001",
   description:
-    "Dinethra Rajapaksha's portfolio - A modern, responsive Next.js portfolio for developers. This open-source template can be customized to showcase your own skills, projects, and professional experience.",
-  url: "https://nbarkiya.xyz",
+    "Dinethra Rajapaksha - B.Sc. Engineering student at University of Moratuwa specializing in Electronic and Telecommunication Engineering. Passionate about IoT, Machine Learning, and Software Development.",
+  url: "https://dinethrarajapaksha.vercel.app",
   links: {
-    twitter: "https://x.com/namanbarkiya",
+    twitter: "https://x.com/DinethraDivanjana2001",
     github: "https://github.com/DinethraDivanjana2001/",
     linkedin: "https://www.linkedin.com/in/dinethra-rajapaksha-7224b3365/",
     email: "divanjanad@gmail.com",
   },
-  ogImage: "https://nbarkiya.xyz/profile-img.jpg",
-  iconIco:
-    "https://res.cloudinary.com/dbfvcn3f6/image/upload/v1692357384/assets/naman-favicon.ico",
-  logoIcon:
-    "https://res.cloudinary.com/dbfvcn3f6/image/upload/v1692357294/assets/naman-logo.png",
+  ogImage: "https://dinethrarajapaksha.vercel.app/profile-img.jpg",
+  iconIco: "/logo.png",
+  logoIcon: "/logo.png",
   keywords: [
     "Dinethra Rajapaksha",
     "AI & Machine Learning",
