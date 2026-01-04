@@ -81,7 +81,16 @@ export type ValidSkills =
   | "Hardware Design"
   | "Analog Electronics"
   | "Audio Engineering"
-  | "Mobile App";
+  | "Mobile App"
+  | "Android"
+  | "OTA"
+  | "ThingsBoard"
+  | "Hardware"
+  | "Electronics"
+  | "Sensors"
+  | "HMI"
+  | "UI/UX"
+  | "Web Dev";
 
 export type ValidCategory =
   | "Full Stack"
@@ -98,8 +107,9 @@ export type ValidCategory =
   | "Computer Vision"
   | "Audio"
   | "Research"
-  | "FPGA"
-  | "Embedded Systems";
+  | "Firmware"
+  | "Embedded Systems"
+  | "FPGA";
 
 export type ValidExpType = "Personal" | "Professional";
 

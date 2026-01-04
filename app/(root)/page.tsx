@@ -12,6 +12,7 @@ import EducationCard from "@/components/education/education-card";
 import EnhancedExperienceCard from "@/components/experience/enhanced-experience-card";
 import { ContactForm } from "@/components/forms/contact-form";
 import ProjectCard from "@/components/projects/project-card";
+import CompactProjectCard from "@/components/projects/compact-project-card";
 import CategorizedSkillsCard from "@/components/skills/categorized-skills-card";
 import { Button, buttonVariants } from "@/components/ui/button";
 import VolunteeringCard from "@/components/volunteering/volunteering-card";
@@ -385,18 +386,122 @@ export default function IndexPage() {
             {pagesConfig.projects.description}
           </AnimatedText>
         </div>
-        <div className="mx-auto grid justify-center gap-4 md:w-full lg:grid-cols-3">
-          {Projects.map((exp, index) => (
-            <AnimatedSection
-              key={exp.id}
-              delay={0.1 * (index + 1)}
-              direction="up"
-            >
-              <ProjectCard project={exp} />
-            </AnimatedSection>
-          ))}
-        </div>
-        {/* All projects are shown above */}
+
+        {/* Final Year Project - LARGE HERO */}
+        {(() => {
+          const finalYearProject = Projects.find((p) => p.projectCategory === "Final Year");
+          return finalYearProject ? (
+            <div className="space-y-8">
+              <h3 className="text-3xl font-bold text-cyan-400 text-center">Final Year Project</h3>
+              <div className="relative bg-gradient-to-br from-card/50 to-card border-2 border-primary/30 rounded-2xl overflow-hidden shadow-2xl">
+                <div className="grid lg:grid-cols-[45%_55%] gap-0">
+                  <div className="relative h-[400px] lg:h-[500px]">
+                    <Image
+                      src={finalYearProject.companyLogoImg}
+                      alt={finalYearProject.companyName}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/80 lg:to-background/60" />
+                  </div>
+                  <div className="relative flex flex-col justify-center p-6 lg:p-10 space-y-4">
+                    <h4 className="text-3xl lg:text-4xl font-bold leading-tight bg-gradient-to-r from-white to-cyan-400 bg-clip-text text-transparent">
+                      {finalYearProject.companyName}
+                    </h4>
+                    <p className="text-muted-foreground text-base lg:text-lg leading-relaxed">
+                      {finalYearProject.shortDescription}
+                    </p>
+                    <div className="flex gap-2 flex-wrap">
+                      {finalYearProject.techStack.slice(0, 4).map((tech) => (
+                        <span key={tech} className="px-3 py-1 text-xs bg-primary/10 text-primary rounded-full">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex gap-3 pt-2">
+                      {finalYearProject.githubLink && (
+                        <Link href={finalYearProject.githubLink} target="_blank">
+                          <Button variant="default">
+                            <Icons.gitHub className="w-4 h-4 mr-2" />
+                            View Code
+                          </Button>
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : null;
+        })()}
+
+        {/* Internship Projects */}
+        {(() => {
+          const internshipProjects = Projects.filter((p) => p.projectCategory === "Internship");
+          const miniInternshipIds = ["hmi-project", "thingsboard-dashboard", "motion-controller-study", "fish-tank-monitoring"];
+          const mainInternships = internshipProjects.filter(p => !miniInternshipIds.includes(p.id));
+          const miniInternships = internshipProjects.filter(p => miniInternshipIds.includes(p.id));
+
+          return internshipProjects.length > 0 ? (
+            <div className="space-y-8 pt-12">
+              <h3 className="text-3xl font-bold text-cyan-400 text-center">Internship Projects</h3>
+
+              {/* Main Internship Projects - 3 column grid */}
+              <div className="mx-auto grid justify-center gap-6 md:w-full lg:grid-cols-3">
+                {mainInternships.map((project, index) => (
+                  <AnimatedSection
+                    key={project.id}
+                    delay={0.1 * (index + 1)}
+                    direction="up"
+                  >
+                    <ProjectCard project={project} />
+                  </AnimatedSection>
+                ))}
+              </div>
+
+              {/* Mini Internship Projects - 4 column grid of compact cards BELOW */}
+              {miniInternships.length > 0 && (
+                <div className="space-y-4 pt-6">
+                  <h4 className="text-lg font-semibold text-muted-foreground text-center">Additional Projects</h4>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+                    {miniInternships.map((project, index) => (
+                      <AnimatedSection
+                        key={project.id}
+                        delay={0.1 * (index + 4)}
+                        direction="up"
+                      >
+                        <CompactProjectCard project={project} />
+                      </AnimatedSection>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : null;
+        })()}
+
+        {/* Other Projects */}
+        {(() => {
+          const otherProjects = Projects.filter(
+            (p) => !p.projectCategory || p.projectCategory === "Academic" || p.projectCategory === "Mini Project"
+          );
+          return otherProjects.length > 0 ? (
+            <div className="space-y-8 pt-12">
+              <h3 className="text-3xl font-bold text-cyan-400 text-center">Other Projects</h3>
+              <div className="mx-auto grid justify-center gap-6 md:w-full lg:grid-cols-3">
+                {otherProjects.map((project, index) => (
+                  <AnimatedSection
+                    key={project.id}
+                    delay={0.1 * (index + 1)}
+                    direction="up"
+                  >
+                    <ProjectCard project={project} />
+                  </AnimatedSection>
+                ))}
+              </div>
+            </div>
+          ) : null;
+        })()}
       </AnimatedSection>
       <AnimatedSection
         direction="left"

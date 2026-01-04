@@ -19,6 +19,8 @@ export interface ProjectInterface {
   shortDescription: string;
   websiteLink?: string;
   githubLink?: string;
+  youtubeLink?: string;
+  projectCategory?: "Final Year" | "Internship" | "Mini Project" | "Academic";
   techStack: ValidSkills[];
   startDate: Date;
   endDate: Date;
@@ -26,6 +28,7 @@ export interface ProjectInterface {
   descriptionDetails: DescriptionDetailsInterface;
   pagesInfoArr: PagesInfoInterface[];
 }
+
 
 export const Projects: ProjectInterface[] = [
   {
@@ -36,6 +39,7 @@ export const Projects: ProjectInterface[] = [
     shortDescription:
       "Developing an autonomous dynamic sensing platform on a quadruped robot, integrating perception, navigation, and visual inspection pipelines with CUDA-accelerated mobility stack on Jetson Orin Nano.",
     githubLink: "https://github.com/DinethraDivanjana2001/Go2-Dynamic-Inspection",
+    projectCategory: "Final Year",
     techStack: ["Python", "CUDA", "ROS", "Deep Learning"],
     startDate: new Date("2024-01-01"),
     endDate: new Date("2025-12-31"),
@@ -54,6 +58,203 @@ export const Projects: ProjectInterface[] = [
       ],
     },
   },
+  // ==================== INTERNSHIP PROJECTS ====================
+  {
+    id: "thingsnode-mobile-app",
+    companyName: "ThingsNode Mobile Application",
+    type: "Professional",
+    category: ["Mobile Dev", "IoT", "Full Stack"],
+    shortDescription:
+      "Developed Flutter-based mobile application for IoT device monitoring with Firebase Cloud Messaging push notifications, deep linking to ThingsBoard dashboards, and real-time telemetry display.",
+    projectCategory: "Internship",
+    techStack: ["Flutter", "Firebase", "Android", "MQTT"],
+    startDate: new Date("2024-06-01"),
+    endDate: new Date("2024-08-31"),
+    companyLogoImg: "/projects/internship/thingsnode-app.png",
+    pagesInfoArr: [],
+    descriptionDetails: {
+      paragraphs: [
+        "Built a production-ready mobile application that transforms IoT device data into an intuitive interface. The app displays live sensor values, sends push alerts for threshold violations, and provides one-tap access to device dashboards.",
+        "Set up the complete codebase from scratch, resolved build configuration issues, integrated Firebase Cloud Messaging for push notifications, implemented custom branding, conducted extensive testing on real devices, and prepared the application for Google Play Store deployment.",
+      ],
+      bullets: [
+        "Flutter + native Android development in Android Studio",
+        "Firebase Cloud Messaging integration for real-time push alerts",
+        "Deep linking to ThingsBoard dashboards",
+        "Device list UI with live telemetry display",
+        "Fixed critical build errors (SDK version conflicts, Gradle mismatches)",
+        "Comprehensive testing on Android 10, 11, and 12 devices",
+        "Complete documentation for future maintenance",
+      ],
+    },
+  },
+  {
+    id: "ansel-firmware",
+    companyName: "Ansel Firmware Development (ESP32)",
+    type: "Professional",
+    category: ["IoT", "Embedded Systems", "Firmware"],
+    shortDescription:
+      "Developed production firmware for ESP32-based ThingsNode devices with MQTT telemetry, OTA updates, MAC-keyed NVS credential storage, and optimized network footprint for industrial IoT deployment.",
+    projectCategory: "Internship",
+    techStack: ["C++", "ESP32", "MQTT", "OTA"],
+    startDate: new Date("2024-06-01"),
+    endDate: new Date("2024-08-31"),
+    companyLogoImg: "/projects/internship/ansel-firmware.png",
+    pagesInfoArr: [],
+    descriptionDetails: {
+      paragraphs: [
+        "Transformed lab-prototype firmware into field-ready production code for ESP32-based IoT devices. Implemented MAC-keyed credential storage in NVS flash, enabling zero-touch provisioning for manufacturing scale-up.",
+        "Developed randomized connect-publish-disconnect cycle to reduce AP load, implemented secure OTA update mechanism with ThingsBoard integration, and added watchdog-based auto-recovery for unattended operation.",
+      ],
+      bullets: [
+        "MAC-keyed NVS storage for per-device Wi-Fi and MQTT credentials",
+        "Randomized connection timing to distribute AP load across device fleet",
+        "OTA firmware updates via ThingsBoard attributes",
+        "MQTT vs CoAP protocol comparison with Wireshark packet analysis",
+        "Watchdog timer for automatic recovery from hung states",
+        "AT command interface for field credential updates",
+        "Comprehensive network study and optimization",
+      ],
+    },
+  },
+  {
+    id: "fingerprint-monitoring",
+    companyName: "Fingerprint-Based User Monitoring System",
+    type: "Professional",
+    category: ["IoT", "Web Dev", "Embedded Systems"],
+    shortDescription:
+      "Built ESP32-based fingerprint authentication system with web UI for user enrollment, task checklist workflow, MQTT telemetry to ThingsBoard, and mDNS-based network discovery with AP fallback.",
+    projectCategory: "Internship",
+    techStack: ["ESP32", "MQTT", "Web Dev", "Embedded Systems"],
+    startDate: new Date("2024-06-01"),
+    endDate: new Date("2024-08-31"),
+    companyLogoImg: "/projects/internship/fingerprint-system.png",
+    pagesInfoArr: [],
+    descriptionDetails: {
+      paragraphs: [
+        "Designed and implemented a complete fingerprint-based operator tracking system for factory floor deployment. System allows operators to log in via fingerprint, select their workstation, complete task checklists, and automatically report data to cloud dashboards.",
+        "Built admin web interface hosted directly on ESP32 for user enrollment and management. Implemented two-step workflow supporting concurrent user sessions, with LED ring feedback for user guidance.",
+      ],
+      bullets: [
+        "UART fingerprint sensor integration with ESP32",
+        "Web-based admin panel for user enrollment and management",
+        "Two-step workflow: login → machine selection → task checklist → submit",
+        "MQTT telemetry with start/end timestamps and selected checks",
+        "mDNS (esp32.local) for easy network access",
+        "SoftAP fallback for initial Wi-Fi configuration",
+        "Session management for concurrent multi-user operation",
+        "LED ring status indicators (blue=scanning, green=success, red=error)",
+      ],
+    },
+  },
+  {
+    id: "hmi-project",
+    companyName: "HMI Project (ANSEL)",
+    type: "Professional",
+    category: ["IoT", "UI/UX"],
+    shortDescription:
+      "Designed and deployed HMI touchscreen interface with login authentication, admin controls, and guided checklist workflow. Simplified navigation and added runtime Wi-Fi credential update capability.",
+    projectCategory: "Internship",
+    techStack: ["HMI", "UI/UX", "Embedded Systems"],
+    startDate: new Date("2024-06-01"),
+    endDate: new Date("2024-08-31"),
+    companyLogoImg: "/projects/internship/hmi-project.png",
+    pagesInfoArr: [],
+    descriptionDetails: {
+      paragraphs: [
+        "Created intuitive HMI touchscreen flows for factory operators with minimal training requirements. Implemented login system, admin configuration page, and step-by-step checklist interface.",
+        "Deployed on-site and gathered operator feedback to refine navigation flow. Added runtime Wi-Fi credential update page to eliminate need for reflashing when network changes.",
+      ],
+      bullets: [
+        "Login screen with user authentication",
+        "Admin page for system configuration",
+        "Guided checklist workflow with clear visual feedback",
+        "Simplified screen navigation based on user feedback",
+        "Runtime Wi-Fi credential update interface",
+        "On-site deployment and iterative improvement",
+      ],
+    },
+  },
+  // ==================== MINI PROJECTS ====================
+  {
+    id: "thingsboard-dashboard",
+    companyName: "Quick Test Dashboard (ThingsBoard Customization)",
+    type: "Professional",
+    category: ["IoT", "Web Dev"],
+    shortDescription:
+      "Created fast, responsive ThingsBoard dashboards for IoT device testing with real-time WebSocket updates, mobile-optimized layouts, dark mode support, and custom status badges.",
+    projectCategory: "Internship",
+    techStack: ["ThingsBoard", "Web Dev", "IoT"],
+    startDate: new Date("2024-06-01"),
+    endDate: new Date("2024-08-31"),
+    companyLogoImg: "/projects/mini/thingsboard-dashboard.png",
+    pagesInfoArr: [],
+    descriptionDetails: {
+      paragraphs: [
+        "Built custom ThingsBoard dashboards optimized for rapid device testing and monitoring. Enabled WebSocket updates for real-time data visualization and implemented responsive grid layouts for mobile access.",
+      ],
+      bullets: [
+        "Real-time charts with WebSocket updates",
+        "Custom status badges for device states",
+        "Mobile-responsive grid layout",
+        "Dark mode support",
+        "Faster test iteration cycles",
+      ],
+    },
+  },
+  {
+    id: "motion-controller-study",
+    companyName: "Motion Controller Compatibility Study",
+    type: "Professional",
+    category: ["Hardware"],
+    shortDescription:
+      "Conducted compatibility analysis between Motion Controller and end device PCBs through circuit tracing, voltage rail measurement, and schematic reconstruction. Documented incompatibility to prevent wasted development effort.",
+    projectCategory: "Internship",
+    techStack: ["Hardware", "Electronics"],
+    startDate: new Date("2024-06-01"),
+    endDate: new Date("2024-08-31"),
+    companyLogoImg: "/projects/mini/motion-controller.png",
+    pagesInfoArr: [],
+    descriptionDetails: {
+      paragraphs: [
+        "Performed detailed compatibility study between Motion Controller and target device. Traced PCB connections, measured voltage rails, and built partial schematics. Identified fundamental incompatibility and documented findings to halt project early.",
+      ],
+      bullets: [
+        "PCB circuit tracing and reverse engineering",
+        "Voltage rail measurements",
+        "Schematic reconstruction",
+        "Compatibility analysis",
+        "Early project termination recommendation with evidence",
+      ],
+    },
+  },
+  {
+    id: "fish-tank-monitoring",
+    companyName: "Fish Tank Monitoring (UoM Civil Research Project)",
+    type: "Professional",
+    category: ["IoT"],
+    shortDescription:
+      "Deployed MagicBit-based water quality monitoring system for university civil engineering research. Measured pH and temperature with MQTT telemetry to ThingsBoard dashboard and alert system.",
+    projectCategory: "Internship",
+    techStack: ["IoT", "MQTT", "Sensors"],
+    startDate: new Date("2024-06-01"),
+    endDate: new Date("2024-08-31"),
+    companyLogoImg: "/projects/mini/fish-tank.png",
+    pagesInfoArr: [],
+    descriptionDetails: {
+      paragraphs: [
+        "Built IoT water quality monitoring system for university research aquarium. Used MagicBit microcontroller with pH and temperature sensors, MQTT telemetry, and ThingsBoard dashboard with threshold alerts.",
+      ],
+      bullets: [
+        "MagicBit microcontroller with pH and temperature sensors",
+        "MQTT data transmission",
+        "ThingsBoard dashboard with live readings",
+        "Alert system for parameter thresholds",
+        "On-site installation and calibration",
+      ],
+    },
+  },
+  // ==================== ACADEMIC PROJECTS ====================
   {
     id: "transx",
     companyName: "TransX - Transformer Maintenance Platform",
@@ -62,6 +263,8 @@ export const Projects: ProjectInterface[] = [
     shortDescription:
       "Full-stack AI-powered platform for transformer inspection with React/TypeScript frontend, Spring Boot backend, and YOLOv8-based Python ML microservice for real-time thermal anomaly detection.",
     githubLink: "https://github.com/DinethraDivanjana2001/TransX-Transformer-Maintenance-Platform",
+    youtubeLink: "https://youtu.be/nJkypNFHEBI",
+    projectCategory: "Academic",
     techStack: ["React", "Typescript", "Python", "MySQL"],
     startDate: new Date("2025-10-01"),
     endDate: new Date("2025-11-30"),
@@ -89,6 +292,8 @@ export const Projects: ProjectInterface[] = [
     shortDescription:
       "End-to-end video object tracking system combining YOLO-based detection with Kalman filter multi-object tracking for robust, real-time tracking with occlusion handling and jitter reduction.",
     githubLink: "https://github.com/DinethraDivanjana2001/YOLOv11-Based-Industrial-Object-Detection-with-Kalman-Filter-Tracking",
+    youtubeLink: "https://youtu.be/-XSXYPTiASQ?si=uiplGu4WoAjNf4NO",
+    projectCategory: "Academic",
     techStack: ["Python", "YOLO", "Computer Vision"],
     startDate: new Date("2025-11-01"),
     endDate: new Date("2025-12-31"),
@@ -198,6 +403,8 @@ export const Projects: ProjectInterface[] = [
     shortDescription:
       "Enhanced lane detection confidence using the LaneIoU architecture, improving accuracy in complex driving scenarios with advanced neural network techniques for real-time lane recognition.",
     githubLink: "https://github.com/Team-Visionary-Innovators/CLRerNet-Improving-Confidence-of-Lane-Detection-with-LaneloU-",
+    youtubeLink: "https://youtu.be/77t6vMTwaGA?si=2LFVhHxs0CDw4FQr",
+    projectCategory: "Academic",
     techStack: ["Python", "Deep Learning", "Computer Vision"],
     startDate: new Date("2024-07-01"),
     endDate: new Date("2024-08-31"),
@@ -225,6 +432,8 @@ export const Projects: ProjectInterface[] = [
     shortDescription:
       "Image recognition system using CNNs for hand gesture detection, achieving high accuracy in gesture recognition with real-time tracking and classification capabilities.",
     githubLink: "https://github.com/DinethraDivanjana2001/Hand-Gesture-Detection",
+    youtubeLink: "https://youtu.be/0rndyq0avwY?si=V6R9jxfoSAvHXcHs",
+    projectCategory: "Academic",
     techStack: ["Python", "Deep Learning", "Computer Vision"],
     startDate: new Date("2024-05-01"),
     endDate: new Date("2024-06-30"),
@@ -251,6 +460,8 @@ export const Projects: ProjectInterface[] = [
     shortDescription:
       "Fast maze-traversing micro mouse that navigates complex mazes autonomously using advanced sensors and algorithms, with PCB design and Webots simulation.",
     githubLink: "https://github.com/DinethraDivanjana2001/Ratatouille-bot-Working",
+    youtubeLink: "https://youtu.be/vFETLNWlH-o?si=ioLXfbr3b69GQ4si",
+    projectCategory: "Academic",
     techStack: ["C++", "Embedded Systems", "Robotics"],
     startDate: new Date("2024-05-01"),
     endDate: new Date("2024-06-30"),
@@ -304,6 +515,8 @@ export const Projects: ProjectInterface[] = [
     shortDescription:
       "Innovative robot with custom 4-layer PCB featuring STM32F405VGT6 ARM-M4 microcontroller and Raspberry Pi 4b for advanced machine vision tasks.",
     githubLink: "https://github.com/DinethraDivanjana2001/TechBots-STM-based-Bot-Working",
+    youtubeLink: "https://youtube.com/shorts/tBnuomBQu8Q?si=MGKkUgElTNfp7K3O",
+    projectCategory: "Academic",
     techStack: ["C++", "STM32", "Raspberry Pi", "Computer Vision"],
     startDate: new Date("2023-02-01"),
     endDate: new Date("2023-03-31"),
@@ -331,6 +544,8 @@ export const Projects: ProjectInterface[] = [
     shortDescription:
       "Smart MediBox assists users in managing medication schedules with timely audio and visual reminders, environmental tracking, and remote management via web dashboard.",
     githubLink: "https://github.com/DinethraDivanjana2001/Medi-Box",
+    youtubeLink: "https://youtu.be/ggxn_mdEnH0?si=5owJUsSnz3Cac3bj",
+    projectCategory: "Academic",
     techStack: ["IoT", "Node-RED", "ESP32"],
     startDate: new Date("2023-04-01"),
     endDate: new Date("2023-05-31"),
@@ -411,6 +626,8 @@ export const Projects: ProjectInterface[] = [
     shortDescription:
       "Path planning implementation in Robot Operating System ROS2, focusing on navigation algorithms and autonomous robot movement in complex environments.",
     githubLink: "https://github.com/DinethraDivanjana2001/-Path-Planning-in-Robot-Operating-System-ROS2-",
+    youtubeLink: "https://youtu.be/QkE4kfG8MWM?si=6ps088ktZHl6goVV",
+    projectCategory: "Academic",
     techStack: ["Python", "ROS2", "Robotics"],
     startDate: new Date("2024-07-01"),
     endDate: new Date("2024-08-31"),
@@ -437,6 +654,8 @@ export const Projects: ProjectInterface[] = [
     shortDescription:
       "Advanced robot capable of line following, wall avoidance, ramp navigation, mechanical arm operation, sound responsiveness, color detection, maze traversal, and obstacle avoidance.",
     githubLink: "https://github.com/DinethraDivanjana2001/EN2533-Robot-Design-and-Competition",
+    youtubeLink: "https://youtube.com/shorts/1-24to8RFuw?si=kQJ8tt-CQMsxh6RN",
+    projectCategory: "Academic",
     techStack: ["C++", "Embedded Systems", "Robotics"],
     startDate: new Date("2024-11-01"),
     endDate: new Date("2024-12-31"),
