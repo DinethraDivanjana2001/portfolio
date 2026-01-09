@@ -10,7 +10,7 @@ import { Icons } from "@/components/common/icons";
 import ContactInfo from "@/components/contact/contact-info";
 import EducationCard from "@/components/education/education-card";
 import EnhancedExperienceCard from "@/components/experience/enhanced-experience-card";
-import { ContactForm } from "@/components/forms/contact-form";
+import { SimpleContactForm } from "@/components/forms/simple-contact-form";
 import ProjectCard from "@/components/projects/project-card";
 import CompactProjectCard from "@/components/projects/compact-project-card";
 import CategorizedSkillsCard from "@/components/skills/categorized-skills-card";
@@ -280,70 +280,6 @@ export default function IndexPage() {
         </AnimatedText>
       </AnimatedSection>
 
-      {/* Education Section */}
-      <AnimatedSection
-        className="container space-y-6 py-16 md:py-24"
-        id="education"
-      >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-          <AnimatedText
-            as="h2"
-            className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl"
-          >
-            <span className="text-primary">Education</span>
-          </AnimatedText>
-          <AnimatedText
-            as="p"
-            delay={0.2}
-            className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
-          >
-            Academic journey and qualifications
-          </AnimatedText>
-        </div>
-
-        {/* Higher Education */}
-        <div className="max-w-[70rem] mx-auto space-y-6">
-          <AnimatedText delay={0.3}>
-            <h3 className="text-2xl font-heading text-primary">Higher Education</h3>
-          </AnimatedText>
-          <div className="grid gap-6 md:gap-8">
-            {educationData
-              .filter((edu) => edu.category === "Higher Education")
-              .map((edu, index) => (
-                <EducationCard key={edu.id} education={edu} index={index + 2} />
-              ))}
-          </div>
-        </div>
-
-        {/* School Education */}
-        <div className="max-w-[70rem] mx-auto space-y-6 mt-12">
-          <AnimatedText delay={0.4}>
-            <h3 className="text-2xl font-heading text-primary">School Education</h3>
-          </AnimatedText>
-          <div className="grid gap-6 md:gap-8">
-            {educationData
-              .filter((edu) => edu.category === "School Education")
-              .map((edu, index) => (
-                <EducationCard key={edu.id} education={edu} index={index + 2} />
-              ))}
-          </div>
-        </div>
-
-        {/* Coursework & Certifications */}
-        <div className="max-w-[70rem] mx-auto space-y-6 mt-12">
-          <AnimatedText delay={0.5}>
-            <h3 className="text-2xl font-heading text-primary">Coursework & Certifications</h3>
-          </AnimatedText>
-          <div className="grid gap-6 md:gap-8 lg:grid-cols-2">
-            {educationData
-              .filter((edu) => edu.category === "Coursework & Certifications")
-              .map((edu, index) => (
-                <EducationCard key={edu.id} education={edu} index={index + 2} />
-              ))}
-          </div>
-        </div>
-      </AnimatedSection>
-
 
       <AnimatedSection
         className="container space-y-6 bg-muted py-10"
@@ -366,6 +302,47 @@ export default function IndexPage() {
         </div>
         <CategorizedSkillsCard skills={skills} />
       </AnimatedSection>
+
+      <AnimatedSection
+        direction="left"
+        className="container space-y-6 py-10 my-14"
+        id="experience"
+      >
+        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+          <AnimatedText
+            as="h2"
+            className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl"
+          >
+            Work <span className="text-primary">Experience</span>
+          </AnimatedText>
+          <AnimatedText
+            as="p"
+            delay={0.2}
+            className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
+          >
+            Professional journey and contributions
+          </AnimatedText>
+        </div>
+        <div className="mx-auto grid justify-center gap-6 md:w-full max-w-6xl">
+          {experiences.map((experience, index) => (
+            <AnimatedSection
+              key={experience.id}
+              delay={0.1 * (index + 1)}
+              direction="up"
+            >
+              <EnhancedExperienceCard experience={experience} />
+            </AnimatedSection>
+          ))}
+        </div>
+        <AnimatedText delay={0.4} className="flex justify-center">
+          <Link href="/experience">
+            <Button variant={"outline"} className="rounded-xl">
+              <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
+            </Button>
+          </Link>
+        </AnimatedText>
+      </AnimatedSection>
+
       <AnimatedSection
         direction="right"
         className="container space-y-6 py-10 my-14"
@@ -503,44 +480,69 @@ export default function IndexPage() {
           ) : null;
         })()}
       </AnimatedSection>
+
+      {/* Education Section */}
       <AnimatedSection
-        direction="left"
-        className="container space-y-6 py-10 my-14"
-        id="experience"
+        className="container space-y-6 py-16 md:py-24"
+        id="education"
       >
         <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
           <AnimatedText
             as="h2"
             className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl"
           >
-            Work <span className="text-primary">Experience</span>
+            <span className="text-primary">Education</span>
           </AnimatedText>
           <AnimatedText
             as="p"
             delay={0.2}
             className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
           >
-            Professional journey and contributions
+            Academic journey and qualifications
           </AnimatedText>
         </div>
-        <div className="mx-auto grid justify-center gap-6 md:w-full max-w-6xl">
-          {experiences.map((experience, index) => (
-            <AnimatedSection
-              key={experience.id}
-              delay={0.1 * (index + 1)}
-              direction="up"
-            >
-              <EnhancedExperienceCard experience={experience} />
-            </AnimatedSection>
-          ))}
+
+        {/* Higher Education */}
+        <div className="max-w-[70rem] mx-auto space-y-6">
+          <AnimatedText delay={0.3}>
+            <h3 className="text-2xl font-heading text-primary">Higher Education</h3>
+          </AnimatedText>
+          <div className="grid gap-6 md:gap-8">
+            {educationData
+              .filter((edu) => edu.category === "Higher Education")
+              .map((edu, index) => (
+                <EducationCard key={edu.id} education={edu} index={index + 2} />
+              ))}
+          </div>
         </div>
-        <AnimatedText delay={0.4} className="flex justify-center">
-          <Link href="/experience">
-            <Button variant={"outline"} className="rounded-xl">
-              <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
-            </Button>
-          </Link>
-        </AnimatedText>
+
+        {/* School Education */}
+        <div className="max-w-[70rem] mx-auto space-y-6 mt-12">
+          <AnimatedText delay={0.4}>
+            <h3 className="text-2xl font-heading text-primary">School Education</h3>
+          </AnimatedText>
+          <div className="grid gap-6 md:gap-8">
+            {educationData
+              .filter((edu) => edu.category === "School Education")
+              .map((edu, index) => (
+                <EducationCard key={edu.id} education={edu} index={index + 2} />
+              ))}
+          </div>
+        </div>
+
+        {/* Coursework & Certifications */}
+        <div className="max-w-[70rem] mx-auto space-y-6 mt-12">
+          <AnimatedText delay={0.5}>
+            <h3 className="text-2xl font-heading text-primary">Coursework & Certifications</h3>
+          </AnimatedText>
+          <div className="grid gap-6 md:gap-8 lg:grid-cols-2">
+            {educationData
+              .filter((edu) => edu.category === "Coursework & Certifications")
+              .map((edu, index) => (
+                <EducationCard key={edu.id} education={edu} index={index + 2} />
+              ))}
+          </div>
+        </div>
       </AnimatedSection>
 
       {/* Certifications Section */}
@@ -606,7 +608,7 @@ export default function IndexPage() {
           <AnimatedText delay={0.4}>
             <div className="bg-background rounded-xl p-6 shadow-sm border">
               <h3 className="text-2xl font-heading mb-6">Send a Message</h3>
-              <ContactForm />
+              <SimpleContactForm />
             </div>
           </AnimatedText>
         </div>

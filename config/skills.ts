@@ -13,7 +13,7 @@ export const skillsUnsorted: skillsInterface[] = [
     description:
       "Versatile programming language for AI/ML, data science, and backend development with extensive libraries.",
     rating: 5,
-    icon: Icons.nodejs, // Using nodejs icon as placeholder
+    icon: Icons.nodejs,
   },
   {
     name: "C/C++",
@@ -34,6 +34,20 @@ export const skillsUnsorted: skillsInterface[] = [
     description:
       "Enhance JavaScript with static types, making code more understandable and reliable for large-scale applications.",
     rating: 5,
+    icon: Icons.typescript,
+  },
+  {
+    name: "HTML/CSS",
+    description:
+      "Frontend web development with semantic HTML5 and modern CSS3 for responsive design.",
+    rating: 5,
+    icon: Icons.react,
+  },
+  {
+    name: "Java",
+    description:
+      "Object-oriented programming for Android development and enterprise applications.",
+    rating: 4,
     icon: Icons.typescript,
   },
   {
@@ -91,6 +105,13 @@ export const skillsUnsorted: skillsInterface[] = [
       "Manage and organize relational databases efficiently for data-driven applications.",
     rating: 4,
     icon: Icons.mysql,
+  },
+  {
+    name: "Flutter/Dart",
+    description:
+      "Cross-platform mobile app development framework for iOS and Android.",
+    rating: 4,
+    icon: Icons.react,
   },
   {
     name: "Altium Designer",
@@ -173,6 +194,62 @@ export const skillsUnsorted: skillsInterface[] = [
     name: "Embedded Systems",
     description:
       "Microcontroller programming and hardware integration for real-time applications.",
+    rating: 5,
+    icon: Icons.settings,
+  },
+  {
+    name: "ThingsBoard",
+    description:
+      "IoT platform for device management, data visualization, and rule-based automation.",
+    rating: 5,
+    icon: Icons.settings,
+  },
+  {
+    name: "MQTT Protocol",
+    description:
+      "Lightweight messaging protocol for IoT device communication and telemetry.",
+    rating: 5,
+    icon: Icons.settings,
+  },
+  {
+    name: "Modbus RTU/TCP",
+    description:
+      "Industrial communication protocol for connecting sensors, PLCs, and SCADA systems.",
+    rating: 4,
+    icon: Icons.settings,
+  },
+  {
+    name: "Firmware Development",
+    description:
+      "ESP32/Arduino firmware with OTA updates, NVS storage, and protocol integration.",
+    rating: 5,
+    icon: Icons.settings,
+  },
+  {
+    name: "Mobile App Development",
+    description:
+      "Android and cross-platform mobile applications with push notifications.",
+    rating: 4,
+    icon: Icons.react,
+  },
+  {
+    name: "Dashboard & UI Design",
+    description:
+      "Creating intuitive dashboards and user interfaces for data visualization.",
+    rating: 4,
+    icon: Icons.settings,
+  },
+  {
+    name: "PiStudio (HMI)",
+    description:
+      "Human-Machine Interface programming with Lua for industrial touch panels.",
+    rating: 4,
+    icon: Icons.settings,
+  },
+  {
+    name: "Problem Solving & Debugging",
+    description:
+      "Systematic troubleshooting with packet analysis and root cause analysis.",
     rating: 5,
     icon: Icons.settings,
   },
