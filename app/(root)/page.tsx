@@ -389,7 +389,7 @@ export default function IndexPage() {
                       {finalYearProject.shortDescription}
                     </p>
                     <div className="flex gap-2 flex-wrap">
-                      {finalYearProject.techStack.slice(0, 4).map((tech) => (
+                      {finalYearProject.techStack.map((tech) => (
                         <span key={tech} className="px-3 py-1 text-xs bg-primary/10 text-primary rounded-full">
                           {tech}
                         </span>

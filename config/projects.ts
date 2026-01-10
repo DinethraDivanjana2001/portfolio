@@ -40,7 +40,7 @@ export const Projects: ProjectInterface[] = [
       "Developing an autonomous dynamic sensing platform on a quadruped robot, integrating perception, navigation, and visual inspection pipelines with CUDA-accelerated mobility stack on Jetson Orin Nano.",
     githubLink: "https://github.com/DinethraDivanjana2001/Go2-Dynamic-Inspection",
     projectCategory: "Final Year",
-    techStack: ["Python", "CUDA", "ROS", "Deep Learning"],
+    techStack: ["Python", "C++", "CUDA", "ROS/ROS2", "Deep Learning", "YOLO", "VLM", "Vision Transformers", "OCR", "Classification", "Segmentation", "TensorRT", "Docker", "FastAPI", "PostgreSQL", "React", "REST API"],
     startDate: new Date("2024-01-01"),
     endDate: new Date("2025-12-31"),
     companyLogoImg: "/projects/unitree-go2/preview.png",
