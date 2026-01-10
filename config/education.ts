@@ -25,7 +25,7 @@ export const educationData: Education[] = [
         location: "Moratuwa, Sri Lanka",
         startDate: "Aug 2022",
         endDate: "Present",
-        gpa: "3.65/4.0",
+        gpa: "3.67/4.0",
         courses: [
             "Deep Learning for Computer Vision",
             "Autonomous Systems",
