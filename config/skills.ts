@@ -86,6 +86,13 @@ export const skillsUnsorted: skillsInterface[] = [
     icon: Icons.nodejs,
   },
   {
+    name: "Keras",
+    description:
+      "High-level neural networks API for fast experimentation with deep learning models.",
+    rating: 4,
+    icon: Icons.nodejs,
+  },
+  {
     name: "Node.js",
     description:
       "Run JavaScript on the server side, enabling dynamic and responsive applications.",

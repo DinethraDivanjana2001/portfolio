@@ -440,7 +440,7 @@ export default function IndexPage() {
               {miniInternships.length > 0 && (
                 <div className="space-y-4 pt-6">
                   <h4 className="text-lg font-semibold text-muted-foreground text-center">Additional Projects</h4>
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+                  <div className="flex flex-col gap-4 max-w-4xl mx-auto">
                     {miniInternships.map((project, index) => (
                       <AnimatedSection
                         key={project.id}

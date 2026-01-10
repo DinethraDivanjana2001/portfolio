@@ -178,7 +178,7 @@ export const Projects: ProjectInterface[] = [
   // ==================== MINI PROJECTS ====================
   {
     id: "thingsboard-dashboard",
-    companyName: "Quick Test Dashboard (ThingsBoard Customization)",
+    companyName: "Quick Tea Waththala Dashboard Design",
     type: "Professional",
     category: ["IoT", "Web Dev"],
     shortDescription:
