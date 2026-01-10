@@ -145,7 +145,7 @@ export default function IndexPage() {
                 </AnimatedText>
                 <AnimatedText delay={0.7}>
                   <Link
-                    href={`mailto:${siteConfig.links.email}`}
+                    href={`https://mail.google.com/mail/?view=cm&fs=1&to=${siteConfig.links.email}`} target="_blank" rel="noopener noreferrer"
                     className={cn(
                       "inline-flex items-center justify-center rounded-md bg-background border border-input hover:bg-accent hover:text-accent-foreground h-11 w-11 transition-colors"
                     )}
@@ -243,7 +243,7 @@ export default function IndexPage() {
           </AnimatedText>
         </div>
 
-        <AnimatedText delay={0.2} className="mx-auto max-w-[48rem]">
+        <AnimatedText delay={0.2} className="mx-auto max-w-[75rem]">
           <div className="space-y-6 text-base sm:text-lg leading-relaxed text-muted-foreground">
             <p>
               I am a final-year Electronics and Telecommunication Engineering undergraduate at the{" "}
@@ -323,7 +323,7 @@ export default function IndexPage() {
             Professional journey and contributions
           </AnimatedText>
         </div>
-        <div className="mx-auto grid justify-center gap-6 md:w-full max-w-6xl">
+        <div className="mx-auto grid justify-center gap-6 md:w-full max-w-7xl">
           {experiences.map((experience, index) => (
             <AnimatedSection
               key={experience.id}
@@ -377,7 +377,7 @@ export default function IndexPage() {
                       src={finalYearProject.companyLogoImg}
                       alt={finalYearProject.companyName}
                       fill
-                      className="object-cover"
+                      unoptimized                      className="object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/80 lg:to-background/60" />
                   </div>

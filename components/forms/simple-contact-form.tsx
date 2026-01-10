@@ -11,8 +11,8 @@ export function SimpleContactForm() {
     const [message, setMessage] = useState("");
 
     // Your contact details - UPDATE THESE!
-    const WHATSAPP_NUMBER = "94771234567"; // Replace with your WhatsApp number (country code + number, no + or spaces)
-    const EMAIL = "dinethra.rajapaksha@example.com"; // Replace with your email
+    const WHATSAPP_NUMBER = "94704916740"; // Your WhatsApp number
+    const EMAIL = "divanjanad@gmail.com"; // Your email address
 
     const handleWhatsApp = () => {
         const text = `Hi, I'm ${name || "someone"}!\n\nSubject: ${subject || "No subject"}\n\n${message || "I'd like to get in touch."}`;
@@ -23,8 +23,9 @@ export function SimpleContactForm() {
     const handleEmail = () => {
         const mailtoSubject = subject || "Contact from Portfolio";
         const mailtoBody = `Hi,\n\nMy name is ${name || "[Your Name]"}.\n\n${message || "[Your Message]"}`;
-        const url = `mailto:${EMAIL}?subject=${encodeURIComponent(mailtoSubject)}&body=${encodeURIComponent(mailtoBody)}`;
-        window.location.href = url;
+        // Open Gmail in browser instead of mailto:
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}&su=${encodeURIComponent(mailtoSubject)}&body=${encodeURIComponent(mailtoBody)}`;
+        window.open(gmailUrl, "_blank");
     };
 
     return (

@@ -19,7 +19,7 @@ export default function ContactInfo() {
                         <div>
                             <p className="text-sm text-muted-foreground mb-1">Email</p>
                             <a
-                                href={`mailto:${siteConfig.links.email}`}
+                                href={`https://mail.google.com/mail/?view=cm&fs=1&to=${siteConfig.links.email}`} target="_blank" rel="noopener noreferrer"
                                 className="text-foreground hover:text-primary transition-colors"
                             >
                                 {siteConfig.links.email}
@@ -77,7 +77,7 @@ export default function ContactInfo() {
                         <Icons.gitHub className="w-5 h-5" />
                     </Link>
                     <Link
-                        href={`mailto:${siteConfig.links.email}`}
+                        href={`https://mail.google.com/mail/?view=cm&fs=1&to=${siteConfig.links.email}`} target="_blank" rel="noopener noreferrer"
                         className="inline-flex items-center justify-center rounded-md bg-background border border-input hover:bg-accent hover:text-accent-foreground h-11 w-11 transition-colors"
                         aria-label="Email"
                     >

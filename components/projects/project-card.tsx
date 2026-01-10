@@ -12,20 +12,20 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="relative p-6 max-w-sm bg-background border border-border rounded-lg">
+    <div className="relative p-6 max-w-sm bg-background border border-border rounded-lg flex flex-col h-full">
       <div className="relative w-full h-[200px]">
         <Image
           className="rounded-lg border border-border object-cover"
           src={project.companyLogoImg}
           alt="img"
           fill
-        />
+          unoptimized        />
       </div>
-      <div className="pt-5 space-y-3">
+      <div className="pt-5 space-y-3 flex-1 flex flex-col">
         <h5 className="text-2xl font-bold tracking-tight text-foreground">
           {project.companyName}
         </h5>
-        <p className="line-clamp-3 font-normal text-muted-foreground">
+        <p className="line-clamp-3 font-normal text-muted-foreground flex-1">
           {project.shortDescription}
         </p>
         <div className="flex gap-2 flex-wrap">

@@ -15,6 +15,7 @@ export default function CompactProjectCard({ project }: CompactProjectCardProps)
                     src={project.companyLogoImg}
                     alt={project.companyName}
                     fill
+                    unoptimized
                 />
             </div>
 
