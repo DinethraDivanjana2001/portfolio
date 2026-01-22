@@ -7,13 +7,13 @@ interface CategorizedSkillsCardProps {
 
 // Define skill categories
 const skillCategories = {
-    "Languages": ["Python", "Java", "C/C++", "JavaScript", "HTML/CSS", "React", "MATLAB", "SQL", "Flutter/Dart"],
+    "Languages": ["Python", "C/C++", "HTML/CSS", "React", "MATLAB"],
     "ML/AI Frameworks": ["TensorFlow", "PyTorch", "Scikit-learn", "Keras"],
-    "Web & Backend": ["React.js", "Node.js", "Next.js", "TypeScript"],
+    "Web & Backend": ["Node.js", "TypeScript"],
     "Developer Tools": ["Git & GitHub", "Altium Designer", "SolidWorks", "LTspice", "Arduino", "CUDA", "PiStudio (HMI)"],
     "IoT & Embedded": ["ThingsBoard", "MQTT Protocol", "Modbus RTU/TCP", "Firmware Development", "Embedded Systems", "IoT Development"],
     "Robotics & Systems": ["ROS/ROS2", "Computer Vision", "Robotic Automation"],
-    "Cloud & Databases": ["MySQL", "Firebase", "AWS"],
+    "Cloud & Databases": ["MySQL", "Firebase"],
     "Other Skills": ["Mobile App Development", "Dashboard & UI Design", "Problem Solving & Debugging"],
 };
 

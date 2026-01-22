@@ -22,13 +22,7 @@ export const skillsUnsorted: skillsInterface[] = [
     rating: 5,
     icon: Icons.typescript,
   },
-  {
-    name: "React.js",
-    description:
-      "Build interactive user interfaces using components, state, props, and virtual DOM for modern web applications.",
-    rating: 5,
-    icon: Icons.react,
-  },
+
   {
     name: "Typescript",
     description:
@@ -43,13 +37,7 @@ export const skillsUnsorted: skillsInterface[] = [
     rating: 5,
     icon: Icons.react,
   },
-  {
-    name: "Java",
-    description:
-      "Object-oriented programming for Android development and enterprise applications.",
-    rating: 4,
-    icon: Icons.typescript,
-  },
+
   {
     name: "MATLAB",
     description:
@@ -57,13 +45,7 @@ export const skillsUnsorted: skillsInterface[] = [
     rating: 4,
     icon: Icons.nodejs,
   },
-  {
-    name: "SQL",
-    description:
-      "Database query language for managing and manipulating relational databases efficiently.",
-    rating: 4,
-    icon: Icons.mysql,
-  },
+
   {
     name: "TensorFlow",
     description:
@@ -113,13 +95,7 @@ export const skillsUnsorted: skillsInterface[] = [
     rating: 4,
     icon: Icons.mysql,
   },
-  {
-    name: "Flutter/Dart",
-    description:
-      "Cross-platform mobile app development framework for iOS and Android.",
-    rating: 4,
-    icon: Icons.react,
-  },
+
   {
     name: "Altium Designer",
     description:
@@ -176,13 +152,7 @@ export const skillsUnsorted: skillsInterface[] = [
     rating: 4,
     icon: Icons.amazonaws,
   },
-  {
-    name: "AWS",
-    description:
-      "Cloud computing platform for building and deploying scalable, reliable applications.",
-    rating: 3,
-    icon: Icons.amazonaws,
-  },
+
   {
     name: "IoT Development",
     description:
