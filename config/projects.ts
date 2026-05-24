@@ -91,11 +91,11 @@ export const Projects: ProjectInterface[] = [
   },
   {
     id: "ansel-firmware",
-    companyName: "Ansel Firmware Development (ESP32)",
+    companyName: "Ansel Firmware Development",
     type: "Professional",
     category: ["IoT", "Embedded Systems", "Firmware"],
     shortDescription:
-      "Developed production firmware for ESP32-based ThingsNode devices with MQTT telemetry, OTA updates, MAC-keyed NVS credential storage, and optimized network footprint for industrial IoT deployment.",
+      "Developed production firmware for ThingsNode IoT devices with MQTT telemetry, OTA updates, MAC-keyed NVS credential storage, and optimized network footprint for industrial IoT deployment.",
     projectCategory: "Internship",
     techStack: ["C++", "ESP32", "MQTT", "OTA"],
     startDate: new Date("2024-06-01"),
@@ -104,7 +104,7 @@ export const Projects: ProjectInterface[] = [
     pagesInfoArr: [],
     descriptionDetails: {
       paragraphs: [
-        "Transformed lab-prototype firmware into field-ready production code for ESP32-based IoT devices. Implemented MAC-keyed credential storage in NVS flash, enabling zero-touch provisioning for manufacturing scale-up.",
+        "Transformed lab-prototype firmware into field-ready production code for ThingsNode IoT devices. Implemented MAC-keyed credential storage in NVS flash, enabling zero-touch provisioning for manufacturing scale-up.",
         "Developed randomized connect-publish-disconnect cycle to reduce AP load, implemented secure OTA update mechanism with ThingsBoard integration, and added watchdog-based auto-recovery for unattended operation.",
       ],
       bullets: [
@@ -124,7 +124,7 @@ export const Projects: ProjectInterface[] = [
     type: "Professional",
     category: ["IoT", "Web Dev", "Embedded Systems"],
     shortDescription:
-      "Built ESP32-based fingerprint authentication system with web UI for user enrollment, task checklist workflow, MQTT telemetry to ThingsBoard, and mDNS-based network discovery with AP fallback.",
+      "Built a microcontroller-based fingerprint authentication system with web UI for user enrollment, task checklist workflow, MQTT telemetry to ThingsBoard, and mDNS-based network discovery with AP fallback.",
     projectCategory: "Internship",
     techStack: ["ESP32", "MQTT", "Web Dev", "Embedded Systems"],
     startDate: new Date("2024-06-01"),
@@ -134,14 +134,14 @@ export const Projects: ProjectInterface[] = [
     descriptionDetails: {
       paragraphs: [
         "Designed and implemented a complete fingerprint-based operator tracking system for factory floor deployment. System allows operators to log in via fingerprint, select their workstation, complete task checklists, and automatically report data to cloud dashboards.",
-        "Built admin web interface hosted directly on ESP32 for user enrollment and management. Implemented two-step workflow supporting concurrent user sessions, with LED ring feedback for user guidance.",
+        "Built admin web interface hosted directly on the microcontroller for user enrollment and management. Implemented two-step workflow supporting concurrent user sessions, with LED ring feedback for user guidance.",
       ],
       bullets: [
-        "UART fingerprint sensor integration with ESP32",
+        "UART fingerprint sensor integration with microcontroller",
         "Web-based admin panel for user enrollment and management",
         "Two-step workflow: login → machine selection → task checklist → submit",
         "MQTT telemetry with start/end timestamps and selected checks",
-        "mDNS (esp32.local) for easy network access",
+        "mDNS (device.local) for easy network access",
         "SoftAP fallback for initial Wi-Fi configuration",
         "Session management for concurrent multi-user operation",
         "LED ring status indicators (blue=scanning, green=success, red=error)",
@@ -562,7 +562,7 @@ export const Projects: ProjectInterface[] = [
         "Environmental tracking",
         "Web-based dashboard with Node-RED",
         "Circuit and PCB design",
-        "ESP32 microcontroller programming with Wokwi simulator",
+        "Microcontroller programming with Wokwi simulator",
       ],
     },
   },
