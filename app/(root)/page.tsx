@@ -81,8 +81,52 @@ export default function IndexPage() {
       <section className="relative pb-8 pt-6 mb-0 md:pb-12 md:py-20 lg:py-32 min-h-screen flex items-center overflow-hidden">
         <div className="container max-w-[90rem]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left Side - Content */}
-            <div className="flex flex-col gap-6 text-center lg:text-left order-2 lg:order-1">
+            {/* LEFT Side - Cover Card with Profile Overlay */}
+            <div className="flex items-center justify-center order-1">
+              <AnimatedText delay={0.2} className="relative">
+                {/* Outer ambient glow */}
+                <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-primary/25 via-primary/5 to-transparent blur-3xl -z-10" />
+
+                {/* Main cover card */}
+                <div
+                  className="relative rounded-3xl overflow-hidden border border-primary/20 shadow-2xl shadow-primary/20 w-[300px] sm:w-[360px] md:w-[400px] lg:w-[460px]"
+                  style={{ animation: "heroFloat 5s ease-in-out infinite" }}
+                >
+                  {/* Cover photo — auto height shows full image */}
+                  <Image
+                    src="/robot-cover.jpg"
+                    height={560}
+                    width={460}
+                    sizes="(max-width: 768px) 85vw, (max-width: 1024px) 50vw, 460px"
+                    className="w-full h-auto object-cover"
+                    alt="Dinethra Rajapaksha with Unitree Go2 Robot Dog"
+                    priority
+                    unoptimized
+                  />
+                  {/* Dark gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+
+                  {/* Profile picture — bottom-left, no text labels */}
+                  <div className="absolute bottom-5 left-5 z-20">
+                    <div className="relative">
+                      <div className="absolute -inset-1.5 rounded-full bg-gradient-to-br from-primary to-primary/40 blur-sm" />
+                      <Image
+                        src={profileImg}
+                        height={128}
+                        width={128}
+                        className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover border-4 border-primary shadow-2xl"
+                        alt="Dinethra Rajapaksha profile"
+                      />
+                    </div>
+                  </div>
+                </div>
+                {/* Blur orb */}
+                <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[420px] bg-primary/10 rounded-full blur-3xl" />
+              </AnimatedText>
+            </div>
+
+            {/* RIGHT Side - Content */}
+            <div className="flex flex-col gap-6 text-center lg:text-left order-2">
               <AnimatedText
                 as="h3"
                 delay={0.2}
@@ -200,24 +244,8 @@ export default function IndexPage() {
               </div>
             </div>
 
-            {/* Right Side - Profile Picture */}
-            <div className="flex items-center justify-center order-1 lg:order-2">
-              <AnimatedText delay={0.2} className="relative">
-                <div className="relative">
-                  <Image
-                    src={profileImg}
-                    height={500}
-                    width={500}
-                    sizes="(max-width: 768px) 80vw, (max-width: 1024px) 50vw, 500px"
-                    className="rounded-full w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px] lg:w-[450px] lg:h-[450px] object-cover border-8 border-primary shadow-2xl"
-                    alt="Dinethra Rajapaksha - AI & Machine Learning Portfolio"
-                    priority
-                  />
-                  {/* Decorative gradient blur effect */}
-                  <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] bg-primary/20 rounded-full blur-3xl"></div>
-                </div>
-              </AnimatedText>
-            </div>
+
+
           </div>
 
           {/* Scroll Down Indicator */}
@@ -395,12 +423,22 @@ export default function IndexPage() {
                         </span>
                       ))}
                     </div>
-                    <div className="flex gap-3 pt-2">
+                    <div className="flex gap-3 pt-2 flex-wrap">
                       {finalYearProject.githubLink && (
                         <Link href={finalYearProject.githubLink} target="_blank">
                           <Button variant="default">
                             <Icons.gitHub className="w-4 h-4 mr-2" />
                             View Code
+                          </Button>
+                        </Link>
+                      )}
+                      {finalYearProject.youtubeLink && (
+                        <Link href={finalYearProject.youtubeLink} target="_blank">
+                          <Button variant="outline" className="border-red-500/50 text-red-400 hover:bg-red-500/10 hover:text-red-400">
+                            <svg className="w-4 h-4 mr-2 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                            Watch
                           </Button>
                         </Link>
                       )}
